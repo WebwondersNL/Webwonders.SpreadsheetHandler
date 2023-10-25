@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Webwonders.SpreadsheetHandler</id>
+    <version>1.0.0</version>
+    <title>Webwonders.SpreadsheetHandler</title>
+    <authors>Webwonders</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <description>Write and read spreadsheets from and into datatables or custom types.</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="NPOI" version="2.6.1" exclude="Build,Analyzers" />
+        <dependency id="Umbraco.Cms.Web.BackOffice" version="[10.0.0, 12.0.0]" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\bin\Release\net6.0\Webwonders.SpreadsheetHandler.dll" target="lib\net6.0\Webwonders.SpreadsheetHandler.dll" />
+    <file src="C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\README.md" target="\README.md" />
+  </files>
+</package>
