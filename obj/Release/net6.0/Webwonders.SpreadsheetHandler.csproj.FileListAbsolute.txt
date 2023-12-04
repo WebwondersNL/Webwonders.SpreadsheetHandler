@@ -298,3 +298,4 @@ C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\obj\Release\net6.0\Web
 C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\obj\Release\net6.0\refint\Webwonders.SpreadsheetHandler.dll
 C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\obj\Release\net6.0\Webwonders.SpreadsheetHandler.pdb
 C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\obj\Release\net6.0\ref\Webwonders.SpreadsheetHandler.dll
+C:\Users\frans\Source\Repos\Webwonders.SpreadsheetHandler\obj\Release\net6.0\Webwonders.SpreadsheetHandler.sourcelink.json

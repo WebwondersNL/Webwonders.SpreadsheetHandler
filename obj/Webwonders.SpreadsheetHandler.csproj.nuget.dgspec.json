@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj": {
-      "version": "1.0.0",
+      "version": "10.5.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj",
         "projectName": "Webwonders.SpreadsheetHandler",
@@ -47,11 +47,11 @@
           "dependencies": {
             "NPOI": {
               "target": "Package",
-              "version": "[2.6.1, )"
+              "version": "[2.6.2, )"
             },
-            "Umbraco.Cms.Web.BackOffice": {
+            "Umbraco.Cms.Web.Website": {
               "target": "Package",
-              "version": "[10.0.0, 12.0.0]"
+              "version": "[10.5.1, )"
             }
           },
           "imports": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

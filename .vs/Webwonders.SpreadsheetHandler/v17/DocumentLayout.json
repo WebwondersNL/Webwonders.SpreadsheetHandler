@@ -1,0 +1,145 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|c:\\users\\frans\\source\\repos\\webwonders.spreadsheethandler\\services\\webwondersspreadsheethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|solutionrelative:services\\webwondersspreadsheethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|c:\\users\\frans\\source\\repos\\webwonders.spreadsheethandler\\models\\webwondersspreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|solutionrelative:models\\webwondersspreadsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|c:\\users\\frans\\source\\repos\\webwonders.spreadsheethandler\\composers\\spreadsheethandlercomposer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|solutionrelative:composers\\spreadsheethandlercomposer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|c:\\users\\frans\\source\\repos\\webwonders.spreadsheethandler\\models\\spreadsheetattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F697B994-6E9C-45AE-B5C9-B69546A676F8}|Webwonders.SpreadsheetHandler.csproj|solutionrelative:models\\spreadsheetattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 18,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebwondersSpreadsheet.cs",
+              "DocumentMoniker": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Models\\WebwondersSpreadsheet.cs",
+              "RelativeDocumentMoniker": "Models\\WebwondersSpreadsheet.cs",
+              "ToolTip": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Models\\WebwondersSpreadsheet.cs",
+              "RelativeToolTip": "Models\\WebwondersSpreadsheet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-27T08:09:47.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpreadsheetHandlerComposer.cs",
+              "DocumentMoniker": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Composers\\SpreadsheetHandlerComposer.cs",
+              "RelativeDocumentMoniker": "Composers\\SpreadsheetHandlerComposer.cs",
+              "ToolTip": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Composers\\SpreadsheetHandlerComposer.cs",
+              "RelativeToolTip": "Composers\\SpreadsheetHandlerComposer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-14T15:08:22.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpreadsheetAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Models\\SpreadsheetAttribute.cs",
+              "RelativeDocumentMoniker": "Models\\SpreadsheetAttribute.cs",
+              "ToolTip": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Models\\SpreadsheetAttribute.cs",
+              "RelativeToolTip": "Models\\SpreadsheetAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-24T11:09:11.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebwondersSpreadsheetHandler.cs",
+              "DocumentMoniker": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Services\\WebwondersSpreadsheetHandler.cs",
+              "RelativeDocumentMoniker": "Services\\WebwondersSpreadsheetHandler.cs",
+              "ToolTip": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Services\\WebwondersSpreadsheetHandler.cs",
+              "RelativeToolTip": "Services\\WebwondersSpreadsheetHandler.cs",
+              "ViewState": "AQIAAKABAAAAAAAAAAAswLABAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-23T09:04:56.48Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
