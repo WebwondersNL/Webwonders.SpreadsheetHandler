@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>Webwonders.SpreadsheetHandler</Title>
@@ -9,7 +9,7 @@
     <Description>Write and read spreadsheets from and into datatables or custom types.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>13.0.0</Version>
+    <Version>10.5.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

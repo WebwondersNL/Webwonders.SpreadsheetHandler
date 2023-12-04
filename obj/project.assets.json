@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net6.0": {
       "Azure.Core/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -11549,7 +11549,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net6.0": [
       "NPOI >= 2.6.2",
       "Umbraco.Cms.Web.Website >= 10.0.0 <= 12.0.0"
     ]
@@ -11559,7 +11559,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "13.0.0",
+    "version": "10.5.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj",
       "projectName": "Webwonders.SpreadsheetHandler",
@@ -11575,7 +11575,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -11584,8 +11584,8 @@
         "https://nuget.outfield.digital/unstable/vendr/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -11596,8 +11596,8 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "NPOI": {
             "target": "Package",
@@ -11624,7 +11624,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
