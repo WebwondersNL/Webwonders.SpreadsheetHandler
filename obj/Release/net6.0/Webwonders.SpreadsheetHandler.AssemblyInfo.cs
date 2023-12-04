@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Write and read spreadsheets from and into datatables or custom types.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("10.5.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("10.5.1+9ecc9e220d4a414beee0240cd75f4be41f776711")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("10.5.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Webwonders.SpreadsheetHandler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Webwonders.SpreadsheetHandler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("10.5.1.0")]
