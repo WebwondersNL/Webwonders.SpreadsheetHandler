@@ -1,37 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj": {}
+    "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj": {
-      "version": "10.5.1",
+    "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj": {
+      "version": "13.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj",
+        "projectUniqueName": "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj",
         "projectName": "Webwonders.SpreadsheetHandler",
-        "projectPath": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\Webwonders.SpreadsheetHandler.csproj",
-        "packagesPath": "C:\\Users\\frans\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frans\\Source\\Repos\\Webwonders.SpreadsheetHandler\\obj\\",
+        "projectPath": "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj",
+        "packagesPath": "/Users/fransdejong/.nuget/packages/",
+        "outputPath": "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\frans\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/fransdejong/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\frans\\Source\\Local Nuget Packages": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.outfield.digital/unstable/vendr/v3/index.json": {}
+          "https://www.myget.org/F/umbraconightly/api/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -39,19 +33,24 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "NPOI": {
               "target": "Package",
-              "version": "[2.6.2, )"
+              "version": "[2.7.1, )"
             },
             "Umbraco.Cms.Web.Website": {
               "target": "Package",
-              "version": "[10.0.0, 12.0.0]"
+              "version": "(, )"
             }
           },
           "imports": [
@@ -70,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
