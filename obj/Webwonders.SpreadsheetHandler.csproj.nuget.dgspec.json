@@ -50,7 +50,7 @@
             },
             "Umbraco.Cms.Web.Website": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[13.0.0, 13.0.0]"
             }
           },
           "imports": [
