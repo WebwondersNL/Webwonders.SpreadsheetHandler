@@ -2,14 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Title>Webwonders.SpreadsheetHandler</Title>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Title>Webwonders Spreadsheet Handler</Title>
     <Authors>Webwonders</Authors>
     <Description>Write and read spreadsheets from and into datatables or custom types.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>13.0.0</Version>
+    <Product>$(AssemblyName)</Product>
+    <PackageTags>umbraco plugin package</PackageTags>
+    <RootNamespace>Webwonders.SpreadsheetHandler</RootNamespace>
+    <Version>13.0.3</Version>
+    <Company>$(Authors)</Company>
+    <Nullable>enable</Nullable>
+    <PackageProjectUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
