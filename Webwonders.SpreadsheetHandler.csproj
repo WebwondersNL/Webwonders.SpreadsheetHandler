@@ -16,12 +16,13 @@
     <Nullable>enable</Nullable>
     <PackageProjectUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>Favicon BY.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.7.1" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13.0.0)" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13,14)" />
   </ItemGroup>
 
   <ItemGroup>
