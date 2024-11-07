@@ -11,11 +11,12 @@
     <Product>$(AssemblyName)</Product>
     <PackageTags>umbraco plugin package</PackageTags>
     <RootNamespace>Webwonders.SpreadsheetHandler</RootNamespace>
-    <Version>13.0.5</Version>
+    <Version>13.0.6</Version>
     <Company>$(Authors)</Company>
     <Nullable>enable</Nullable>
     <PackageProjectUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIconUrl></PackageIconUrl>
     <PackageIcon>Favicon BY.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -27,6 +28,13 @@
 
   <ItemGroup>
     <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Favicon BY.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
