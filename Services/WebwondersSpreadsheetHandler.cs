@@ -20,11 +20,22 @@ public interface IWebwondersSpreadsheetHandler
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="SpreadsheetFile">Spreadsheet to read</param>
-	/// <param name="mapper">Function to map the spreadsheet to an instance of class T</param>
+	/// <param name="mapper">Function to map the spreadsheet to an enumerable of class T</param>
 	/// <param name="sheetNumber">Sheetnumber to read, default 0 (first)</param>
 	/// <param name="StopOnError">If true: stops reading after an error, result will be null, default false</param>
 	/// <returns>WWSpreadsheet containing data</returns>
 	IEnumerable<T>? ReadSpreadsheet<T>(string SpreadsheetFile, Func<WebwondersSpreadsheet, IEnumerable<T>> mapper, int sheetNumber = 0, bool StopOnError = false) where T : class;
+	
+	/// <summary>
+	/// Reads the spreadsheet and returns an IEnumerable of the mapped class
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="SpreadsheetFile">Spreadsheet to read</param>
+	/// <param name="mapper">Function to map the spreadsheet to an instance of class T</param>
+	/// <param name="sheetNumber">Sheetnumber to read, default 0 (first)</param>
+	/// <param name="StopOnError">If true: stops reading after an error, result will be null, default false</param>
+	/// <returns>Instance of class T containing data</returns>
+	T? ReadSpreadsheet<T>(string SpreadsheetFile, Func<WebwondersSpreadsheet, T> mapper, int sheetNumber = 0, bool StopOnError = false) where T : class;
 
 
 	/// <summary>
@@ -86,6 +97,17 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
 
 	///<inheritdoc />
 	public IEnumerable<T>? ReadSpreadsheet<T>(string SpreadsheetFile, Func<WebwondersSpreadsheet, IEnumerable<T>> mapper, int sheetNumber = 0, bool StopOnError = false) where T : class
+	{
+		var result = ReadSpreadsheet<T>(SpreadsheetFile, sheetNumber, StopOnError);
+		if (result != null)
+		{
+			return mapper(result);
+		}
+		return null;
+	}
+	
+	///<inheritdoc />
+	public T? ReadSpreadsheet<T>(string SpreadsheetFile, Func<WebwondersSpreadsheet, T> mapper, int sheetNumber = 0, bool StopOnError = false) where T : class
 	{
 		var result = ReadSpreadsheet<T>(SpreadsheetFile, sheetNumber, StopOnError);
 		if (result != null)
