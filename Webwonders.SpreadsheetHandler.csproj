@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.7.1" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13]" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13.0.0)" />
   </ItemGroup>
 
   <ItemGroup>

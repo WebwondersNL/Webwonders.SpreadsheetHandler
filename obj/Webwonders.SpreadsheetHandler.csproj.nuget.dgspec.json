@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj": {
-      "version": "13.0.0",
+      "version": "13.0.3",
       "restore": {
         "projectUniqueName": "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj",
         "projectName": "Webwonders.SpreadsheetHandler",
@@ -50,7 +50,7 @@
             },
             "Umbraco.Cms.Web.Website": {
               "target": "Package",
-              "version": "[13.0.0, 13.0.0]"
+              "version": "(, )"
             }
           },
           "imports": [
