@@ -19,6 +19,9 @@ This service has the following methods:
 	MemoryStream? WriteSpreadsheet<T>(IEnumerable<T> data, bool StopOnError = false) where T : class;
 	  - Writes a spreadsheet from a list of custom class objects.
 
+	MemoryStream? WriteSpreadsheet<T>(IEnumerable<T> data, SpreadsheetSettings spreadsheetSettings, bool StopOnError = false) where T : class;
+	  - Writes a spreadsheet from a list of custom class objects, using manually supplied SpreadsheetSettings.
+
 	DataTable? ReadSpreadsheet(string spreadsheetFile, SpreadsheetSettings? spreadsheetSettings = null, int sheetNumber = 0, bool stopOnError = false);
       - Reads a spreadsheet into a datatable.
 	
