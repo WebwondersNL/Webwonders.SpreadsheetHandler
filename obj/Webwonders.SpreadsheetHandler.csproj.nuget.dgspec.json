@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj": {
-      "version": "13.0.4",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/fransdejong/Repos/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj",
         "projectName": "Webwonders.SpreadsheetHandler",
@@ -38,7 +38,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -50,7 +51,7 @@
             },
             "Umbraco.Cms.Web.Website": {
               "target": "Package",
-              "version": "[13.0.0, 14.0.0)"
+              "version": "[13.0.0, 15.0.0)"
             }
           },
           "imports": [
@@ -64,12 +65,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/fransdejong/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

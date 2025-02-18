@@ -1,42 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ContentTargetFolders>.</ContentTargetFolders>
-    <Title>Webwonders Spreadsheet Handler</Title>
-    <Authors>Webwonders</Authors>
-    <Description>Write and read spreadsheets from and into datatables or custom types.</Description>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Product>$(AssemblyName)</Product>
-    <PackageTags>umbraco plugin package</PackageTags>
-    <RootNamespace>Webwonders.SpreadsheetHandler</RootNamespace>
-    <Version>14.0.3</Version>
-    <Company>$(Authors)</Company>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageProjectUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</PackageProjectUrl>
+
+    <!-- Basic Information -->
+    <PackageId>Webwonders.SpreadsheetHandler</PackageId>
+    <Version Condition="'$(VERSION)' != ''">$(VERSION)</Version>
+    <Authors>Webwonders</Authors>
+    <Company>Webwonders</Company>
+    <Description>Write and read spreadsheets from and into datatables or custom types.</Description>
+    <PackageTags>umbraco-marketplace,Umbraco</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- URLs -->
+    <ProjectUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</ProjectUrl>
+    <RepositoryUrl>https://github.com/WebwondersNL/Webwonders.SpreadsheetHandler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>Favicon BY.png</PackageIcon>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageIcon>webwonders.png</PackageIcon>
+
+    <!-- Umbraco Specific Metadata -->
+    <UmbracoVersion>13.0.0</UmbracoVersion>
+    <UmbracoPackageId>Webwonders.Umbraco.DockerConfiguration</UmbracoPackageId>
   </PropertyGroup>
 
+  <Target Name="CopyReadme" BeforeTargets="Pack">
+    <Copy SourceFiles="../../README.md" DestinationFolder="$(OutputPath)" Condition="Exists('../../README.md')" />
+  </Target>
+  
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+    <None Include="webwonders.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.7.1" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13,14)" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[13.0.0,15.0.0)" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Favicon BY.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
 </Project>
