@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webwonders.SpreadsheetHandler", "Webwonders.SpreadsheetHandler.csproj", "{F697B994-6E9C-45AE-B5C9-B69546A676F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webwonders.SpreadsheetHandler", "src\Webwonders.SpreadsheetHandler\Webwonders.SpreadsheetHandler.csproj", "{F697B994-6E9C-45AE-B5C9-B69546A676F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
