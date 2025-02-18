@@ -23,10 +23,10 @@ jobs:
           dotnet-version: 8.0
 
       - name: Restore dependencies
-        run: dotnet restore ./src/Webwonders.Umbraco.DockerConfiguration/Webwonders.Umbraco.DockerConfiguration.csproj
+        run: dotnet restore ./src/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj
 
       - name: Build the project
-        run: dotnet build ./src/Webwonders.Umbraco.DockerConfiguration/Webwonders.Umbraco.DockerConfiguration.csproj --configuration Release --no-restore
+        run: dotnet build ./src/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj --configuration Release --no-restore
 
   publish:
     name: Publish to NuGet
@@ -53,14 +53,14 @@ jobs:
         run: echo "VERSION=$(echo ${{ github.ref_name }} | sed 's/v//')" >> $GITHUB_ENV
 
       - name: Copy README.md for Packaging
-        run: cp README.md ./src/Webwonders.Umbraco.DockerConfiguration/
+        run: cp README.md ./src/Webwonders.SpreadsheetHandler/
 
       - name: Publish package to NuGet
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
           VERSION: ${{ env.VERSION }}
         run: |
-          dotnet pack ./src/Webwonders.Umbraco.DockerConfiguration/Webwonders.Umbraco.DockerConfiguration.csproj --configuration Release /p:Version=$VERSION --output ./artifacts
+          dotnet pack ./src/Webwonders.SpreadsheetHandler/Webwonders.SpreadsheetHandler.csproj --configuration Release /p:Version=$VERSION --output ./artifacts
           dotnet nuget push ./artifacts/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
 
   release:
