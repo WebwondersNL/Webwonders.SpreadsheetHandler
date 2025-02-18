@@ -407,30 +407,6 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
         var sheet = CreateWorksheet(workbook);
         var success = WriteDataToSheet(data, sheet, spreadsheetSettings ?? new SpreadsheetSettings(), StopOnError);
         if (!success) return null;
-        //var headerRow = sheet.CreateRow(0);
-
-        //for (int i = 0; i < data.Columns.Count; i++)
-        //{
-        //    headerRow.CreateCell(i).SetCellValue(data.Columns[i].ColumnName);
-        //}
-        //for (int i = 0; i < data.Rows.Count; i++)
-        //{
-        //    var row = sheet.CreateRow(i + 1);
-        //    for (int j = 0; j < data.Columns.Count; j++)
-        //    {
-        //        if (spreadsheetSettings != null
-        //            && spreadsheetSettings.ColumnDefinitions.Any(x => x.ColumnRequired && x.ColumnName == data.Columns[j].ColumnName)
-        //            && (data.Rows[i][j] == null || string.IsNullOrEmpty(data.Rows[i][j].ToString())))
-        //        {
-        //            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: Required cell {Column} of row {Row} is empty", data.Columns[j].ColumnName, i + 1);
-        //            if (StopOnError)
-        //            {
-        //                return null;
-        //            }
-        //        }
-        //        row.CreateCell(j).SetCellValue(data.Rows[i][j].ToString());
-        //    }
-        //}
 
         var stream = new MemoryStream();
         workbook.Write(stream, true); // true to leave stream open
