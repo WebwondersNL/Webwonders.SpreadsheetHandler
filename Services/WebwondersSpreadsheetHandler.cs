@@ -45,6 +45,14 @@ public interface IWebwondersSpreadsheetHandler
     /// <returns>Memorystream with spreadsheet</returns>
     MemoryStream? WriteSpreadsheet<T>(IEnumerable<T> data, bool StopOnError = false) where T : class;
 
+    /// <summary>
+    /// Writes data to a spreadsheet, in multiple worksheets, returning a memory stream
+    /// </summary>
+    /// <typeparam name="T">type of class to write</typeparam>
+    /// <param name="data">Dictionary with sheetname and IEnumerable of <typeparamref name="T"/> containing data</param>
+    /// <param name="StopOnError">If true: stops writing after an error, result will be null, default false</param>
+    /// <returns>Memorystream with spreadsheet</returns>
+    MemoryStream? WriteSpreadsheet<T>(Dictionary<string, IEnumerable<T>> data, bool StopOnError = false) where T : class;
 
     /// <summary>
     /// Reads the spreadsheet and returns a DataTable
@@ -130,28 +138,8 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
     }
 
 
-    public MemoryStream? WriteSpreadsheet<T>(IEnumerable<T> data, SpreadsheetSettings spreadsheetSettings, bool StopOnError = false) where T : class
+    private bool WriteDataToSheet<T>(IEnumerable<T> data, ISheet sheet, SpreadsheetSettings spreadsheetSettings, bool StopOnError = false)
     {
-        if (data == null || !data.Any())
-        {
-            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No data to write");
-            return null;
-        }
-
-        if (spreadsheetSettings.IncludedColumns != null && spreadsheetSettings.IncludedColumns.Any())
-        {
-            spreadsheetSettings.ColumnDefinitions = spreadsheetSettings.ColumnDefinitions.Where(x => spreadsheetSettings.IncludedColumns.Contains(x.ColumnName)).ToList();
-        }
-
-        if (spreadsheetSettings.ColumnDefinitions.Count == 0)
-        {
-            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No columns defined for spreadsheet on Type {T}", typeof(T));
-            return null;
-        }
-
-        // Next: write the data to the spreadsheet
-        var workbook = new XSSFWorkbook();
-        ISheet sheet = workbook.CreateSheet();
         IRow headerRow = sheet.CreateRow(0);
         for (int i = 0; i < spreadsheetSettings.ColumnDefinitions.Count; i++)
         {
@@ -175,7 +163,7 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
                     _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: Empty cell found in column {Column} of row {Row}, but empty cells are not allowed", columnDefinition.ColumnName, row.RowNum);
                     if (StopOnError)
                     {
-                        return null;
+                        return false;
                     }
                 }
                 if (columnDefinition.ColumnRequired && value == null)
@@ -183,7 +171,7 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
                     _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: Required cell {Column} of row {Row} is empty", columnDefinition.ColumnName, row.RowNum);
                     if (StopOnError)
                     {
-                        return null;
+                        return false;
                     }
                 }
 
@@ -221,6 +209,58 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
             }
         }
 
+        return true;
+    }
+
+    public MemoryStream? WriteSpreadsheet<T>(IEnumerable<T> data, SpreadsheetSettings spreadsheetSettings, bool StopOnError = false) where T : class
+    {
+        if (data == null || !data.Any())
+        {
+            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No data to write");
+            return null;
+        }
+
+        if (spreadsheetSettings.IncludedColumns != null && spreadsheetSettings.IncludedColumns.Any())
+        {
+            spreadsheetSettings.ColumnDefinitions = spreadsheetSettings.ColumnDefinitions.Where(x => spreadsheetSettings.IncludedColumns.Contains(x.ColumnName)).ToList();
+        }
+
+        if (spreadsheetSettings.ColumnDefinitions.Count == 0)
+        {
+            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No columns defined for spreadsheet on Type {T}", typeof(T));
+            return null;
+        }
+
+        // Next: write the data to the spreadsheet
+        var workbook = new XSSFWorkbook();
+        ISheet sheet = CreateWorksheet(workbook);
+        var success = WriteDataToSheet(data, sheet, spreadsheetSettings, StopOnError);
+        if (!success) return null;
+        var exportData = new MemoryStream();
+        workbook.Write(exportData, true); // true to leave stream open
+        return exportData;
+    }
+
+    public MemoryStream? WriteSpreadsheet<T>(Dictionary<string, IEnumerable<T>> data, bool StopOnError = false) where T : class
+    {
+        if (data == null || !data.Any())
+        {
+            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No data to write");
+            return null;
+        }
+
+        var spreadsheetSettings = CreateDefaultSettings<T>();
+
+        // Next: write the data to the spreadsheet
+        var workbook = new XSSFWorkbook();
+
+        foreach (var key in data.Keys)
+        {
+            var sheet = CreateWorksheet(workbook, key);
+            var success = WriteDataToSheet(data[key], sheet, spreadsheetSettings, StopOnError);
+            if (!success) return null;
+        }
+
         var exportData = new MemoryStream();
         workbook.Write(exportData, true); // true to leave stream open
         return exportData;
@@ -231,7 +271,6 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
     {
         return WriteSpreadsheet(data, CreateDefaultSettings<T>(), StopOnError);
     }
-
 
     ///<inheritdoc />
     public DataTable? ReadSpreadsheet(string spreadsheetFile, SpreadsheetSettings? spreadsheetSettings = null, int sheetNumber = 0, bool stopOnError = false)
@@ -307,20 +346,25 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
     }
 
 
-
-
-    ///<inheritdoc />
-    public MemoryStream? WriteSpreadsheet(DataTable data, SpreadsheetSettings? spreadsheetSettings = null, bool StopOnError = false)
+    private ISheet CreateWorksheet(XSSFWorkbook workbook, string? sheetName = null)
     {
+        ISheet sheet;
 
-        // can check for emptycellsisallowed and required cells here
-        if (data.Rows == null || data.Rows.Count <= 0)
+        if (!string.IsNullOrEmpty(sheetName))
         {
-            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No data to write");
-            return null;
+            sheet = workbook.CreateSheet(sheetName);
         }
-        var workbook = new XSSFWorkbook();
-        var sheet = workbook.CreateSheet();
+        else
+        {
+            sheet = workbook.CreateSheet();
+        }
+
+        return sheet;
+    }
+
+    private bool WriteDataToSheet(DataTable data, ISheet sheet, SpreadsheetSettings spreadsheetSettings,
+        bool StopOnError = false)
+    {
         var headerRow = sheet.CreateRow(0);
 
         for (int i = 0; i < data.Columns.Count; i++)
@@ -339,12 +383,54 @@ public class WebwondersSpreadsheetHandler : IWebwondersSpreadsheetHandler
                     _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: Required cell {Column} of row {Row} is empty", data.Columns[j].ColumnName, i + 1);
                     if (StopOnError)
                     {
-                        return null;
+                        return false;
                     }
                 }
                 row.CreateCell(j).SetCellValue(data.Rows[i][j].ToString());
             }
         }
+
+        return true;
+    }
+
+    ///<inheritdoc />
+    public MemoryStream? WriteSpreadsheet(DataTable data, SpreadsheetSettings? spreadsheetSettings = null, bool StopOnError = false)
+    {
+
+        // can check for emptycellsisallowed and required cells here
+        if (data.Rows == null || data.Rows.Count <= 0)
+        {
+            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: No data to write");
+            return null;
+        }
+        var workbook = new XSSFWorkbook();
+        var sheet = CreateWorksheet(workbook);
+        var success = WriteDataToSheet(data, sheet, spreadsheetSettings ?? new SpreadsheetSettings(), StopOnError);
+        if (!success) return null;
+        //var headerRow = sheet.CreateRow(0);
+
+        //for (int i = 0; i < data.Columns.Count; i++)
+        //{
+        //    headerRow.CreateCell(i).SetCellValue(data.Columns[i].ColumnName);
+        //}
+        //for (int i = 0; i < data.Rows.Count; i++)
+        //{
+        //    var row = sheet.CreateRow(i + 1);
+        //    for (int j = 0; j < data.Columns.Count; j++)
+        //    {
+        //        if (spreadsheetSettings != null
+        //            && spreadsheetSettings.ColumnDefinitions.Any(x => x.ColumnRequired && x.ColumnName == data.Columns[j].ColumnName)
+        //            && (data.Rows[i][j] == null || string.IsNullOrEmpty(data.Rows[i][j].ToString())))
+        //        {
+        //            _logger.LogError("Webwonders.Spreadsheethandler, WriteSpreadsheet: Required cell {Column} of row {Row} is empty", data.Columns[j].ColumnName, i + 1);
+        //            if (StopOnError)
+        //            {
+        //                return null;
+        //            }
+        //        }
+        //        row.CreateCell(j).SetCellValue(data.Rows[i][j].ToString());
+        //    }
+        //}
 
         var stream = new MemoryStream();
         workbook.Write(stream, true); // true to leave stream open
