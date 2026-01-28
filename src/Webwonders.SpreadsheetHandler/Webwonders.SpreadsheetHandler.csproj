@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -21,7 +21,7 @@
     <PackageIcon>webwonders.png</PackageIcon>
 
     <!-- Umbraco Specific Metadata -->
-    <UmbracoVersion>16.0.0</UmbracoVersion>
+    <UmbracoVersion>17.0.0</UmbracoVersion>
     <UmbracoPackageId>Webwonders.Umbraco.DockerConfiguration</UmbracoPackageId>
   </PropertyGroup>
 
@@ -36,6 +36,6 @@
   
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.7.1" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[16.0.0,17.0.0)" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[17.0.0,18.0.0)" />
   </ItemGroup>
 </Project>
